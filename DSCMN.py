@@ -10,7 +10,6 @@ from sklearn import metrics
 from math import sqrt
 import os
 from numpy import array
-from sklearn.cross_validation import KFold
 import math
 import pandas as pd
 from memory import DSCMN
