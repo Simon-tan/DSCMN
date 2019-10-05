@@ -621,13 +621,13 @@ def main(unused_args):
               train_op = optimizer.apply_gradients(grads_and_vars, name="train_op", global_step=global_step)
               session.run(tf.initialize_all_variables())
               j=1
-              fold_id=1
+              
               for i in range(config.max_max_epoch):
                   rmse, auc, r2, acc, _ = run_epoch(session, m, train_students, item_diff,  max_stu, cluster, train_op, verbose=False)
-                  print("Fold: %d \t Epoch: %d  \t Train Metrics:\n rmse: %.3f \t auc: %.3f \t r2: %.3f \t acc: %.3f \n" % (fold_id,i, rmse, auc, r2, acc))
+                  print(" Epoch: %d  \t Train Metrics:\n rmse: %.3f \t auc: %.3f \t r2: %.3f \t acc: %.3f \n" % (i, rmse, auc, r2, acc))
                   if((i+1) % FLAGS.evaluation_interval == 0):
                      rmse, auc, r2, acc, all_logits = run_epoch(session, mtest, test_students, item_diff, max_stu, cluster, tf.no_op(), verbose=True)
-                     print("Fold: %d \t Epoch: %d  \t Test Metrics:\n rmse: %.3f \t auc: %.3f \t r2: %.3f \t acc: %.3f \n" % (fold_id, j, rmse, auc, r2, acc))
+                     print(" Epoch: %d  \t Test Metrics:\n rmse: %.3f \t auc: %.3f \t r2: %.3f \t acc: %.3f \n" % (j, rmse, auc, r2, acc))
                      j+=1
                             
 
