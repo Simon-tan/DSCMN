@@ -1,4 +1,5 @@
-# DSCMN
+# PAKDD'2019: Dynamic student classification on memory networks for knowledge tracing (DSCMN)
+This code is for the paper https://ink.library.smu.edu.sg/cgi/viewcontent.cgi?article=5350&context=sis_research
 
 
 ### Data format
